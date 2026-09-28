@@ -18,6 +18,8 @@ export function Closing() {
         <p lang="ar" dir="rtl" className="mt-8 font-arabic text-[clamp(1.35rem,4vw,1.9rem)] leading-relaxed text-deep">
           {wedding.copy.closingDua}
         </p>
+        <p className="mt-3 max-w-md text-sm leading-relaxed text-royal/80 italic">{wedding.copy.closingDuaEn}</p>
+        <p className="mt-2 text-xs tracking-[0.2em] text-gold uppercase">{wedding.copy.closingduaCitation}</p>
       </Reveal>
     </section>
   );

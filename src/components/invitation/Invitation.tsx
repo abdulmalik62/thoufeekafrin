@@ -178,6 +178,8 @@ export function Invitation() {
           <p lang="ar" dir="rtl" className="mt-4 font-arabic text-2xl text-[#f6ecd4]">
             {wedding.copy.closingDua}
           </p>
+          <p className="mt-3 text-sm leading-relaxed text-[#e7d7a8] italic">{wedding.copy.closingDuaEn}</p>
+          <p className="mt-2 text-xs tracking-[0.2em] text-[#d7ae5f] uppercase">{wedding.copy.closingduaCitation}</p>
         </Panel>
 
         <footer className="px-6 pt-2 pb-24 text-center">
