@@ -32,12 +32,12 @@ export function CoupleNames({
         className,
       )}
     >
-      <span className={cx("font-display font-light leading-none", nameSize)}>{wedding.groom}</span>
+      <span className={cx("font-display font-light leading-none", nameSize)}>{wedding.displayGroom}</span>
       <span className="my-[0.08em] font-display text-[clamp(1.5rem,3vw,2.4rem)] italic leading-none text-gold" aria-hidden="true">
         &
       </span>
       <span className="sr-only"> and </span>
-      <span className={cx("font-display font-light leading-none", nameSize)}>{wedding.bride}</span>
+      <span className={cx("font-display font-light leading-none", nameSize)}>{wedding.displayBride}</span>
     </Tag>
   );
 }

@@ -1,25 +1,32 @@
 export const wedding = {
-  groom: "Thoufeek",
-  bride: "Afrin",
+  groom: "Thoufeek Jailane K",
+  bride: "Aafrin O.S",
+  displayGroom: "Thoufeek",
+  displayBride: "Aafreen",
+  groomParents: "S/o Mohideen Pillan & Firthous",
+  brideParents: "D/o Syed Ahmed Sahib & Jahanara",
   date: "2026-10-21",
   displayDate: "21 October 2026",
   numericDate: "21 • 10 • 2026",
-  venue: "Bride's House",
-  receptionDate: "20.10.2026",
+  venue: "Middle Ayyapuram Street, Naina Mohamed Jumma Masjid, Kadayanallur",
   weddingDate: "21.10.2026",
+  nikahTime: "10:00 AM - 12:00 PM",
+  hijriDate: "10 Jumada I 1448 AH",
+  valimaVenue: "Groom's House",
   credit: "Er. Abdul Malik B.E. MBA",
   family: [
-    { role: "Big Brother", name: "Shahul Hameed" },
-    { role: "Sister in Law", name: "Riswana" },
-    { role: "Elder Sisters", name: "Muneera, Kathija" },
-    { role: "Younger Brother", name: "Abdul Malik" },
-    { role: "Younger Sister", name: "Ajeeba" },
+    { role: "Elder Brother - Sister in Law", members: ["Shahul Hameed - Riswana"] },
+    { role: "Elder Sisters - Brothers-in-law", members: ["Muneera - Mohamed Ali", "Kathija - Jamal Mohideen"] },
+    { role: "Younger Brother", members: ["Abdul Malik"] },
+    { role: "Younger Sister", members: ["Ajeeba Mumtaj"] },
+    { role: "Children", members: ["Riza, Mufeed, Afsheen, Rifqa, Bahiya"] },
   ],
   /**
    * Paste a Google Maps URL when it is ready.
    * Leave this empty — the site will not invent a location.
    */
-  mapsUrl: "",
+  mapsUrl:
+    "https://www.google.com/maps/search/?api=1&query=Middle%20Ayyapuram%20Street%2C%20Naina%20Mohamed%20Jumma%20Masjid%2C%20Kadayanallur",
   /**
    * Optional POST endpoint. While empty, RSVP choices stay in the page only.
    */
@@ -34,12 +41,12 @@ export const wedding = {
   audioEnabled: true,
   copy: {
     families: "Together with their families",
-    invite: "invite you to celebrate their Nikah",
+    invite: "invite you to celebrate their Nikkah",
     storyTitle: "Our Beginning",
     story: "Two journeys, one beautiful beginning.",
-    nikahTitle: "The Nikah",
+    nikahTitle: "The Nikkah",
     nikah:
-      "With the blessings of our families and loved ones, we invite you to share in the joy of our Nikah.",
+      "With the blessings of our families and loved ones, we invite you to share in the joy of our Nikkah.",
     countdownReached: "Today, the journey begins.",
     closing: "Your presence and duas are the greatest gifts.",
     bismillah: "بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ",
@@ -50,12 +57,12 @@ export const wedding = {
     verseCitation: "Qur'an 78:8",
     rsvpTitle: "Will You Join Us?",
     mapsPending: "Directions will be shared personally.",
-    locationNote: "Both gatherings will be held at the Bride's House.",
+    locationNote: "The Nikkah will be held at the address above.",
   },
   nav: [
     { id: "home", label: "Home" },
     { id: "story", label: "Our Story" },
-    { id: "nikah", label: "Nikah" },
+    { id: "nikah", label: "Nikkah" },
     { id: "details", label: "Details" },
     { id: "location", label: "Location" },
   ],

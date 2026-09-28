@@ -109,12 +109,12 @@ export function Invitation() {
             alt={`Illustrated portrait of ${wedding.groom} and ${wedding.bride}`}
             className="mx-auto mt-4 h-auto w-[94%] max-w-[400px] object-contain"
           />
-          <p className="mt-2 font-script text-3xl text-[#d7ae5f]">Nikah</p>
+          <p className="mt-2 font-script text-3xl text-[#d7ae5f]">Nikkah</p>
           <div className="mt-6 grid gap-4">
-            <PersonCard initial="T" title={`Groom ${wedding.groom}`} note="Together with his family" />
-            <PersonCard initial="A" title={`Bride ${wedding.bride}`} note="Together with her family" />
+            <PersonCard initial="T" title={wedding.groom} note={wedding.groomParents} />
+            <PersonCard initial="A" title={wedding.bride} note={wedding.brideParents} />
           </div>
-          <p className="mt-6 text-sm tracking-wide text-[#d7ae5f]">#{wedding.groom}Weds{wedding.bride}</p>
+          <p className="mt-6 text-sm tracking-wide text-[#d7ae5f]">#{wedding.displayGroom}Weds{wedding.displayBride}</p>
         </Panel>
 
         <section className="px-4 pb-6">
@@ -129,13 +129,15 @@ export function Invitation() {
                 <Flower />
               </div>
               <div className="mt-6 grid gap-3">
-                {wedding.family.map((person) => (
+                {wedding.family.map((group) => (
                   <article
-                    key={person.role}
+                    key={group.role}
                     className="rounded-xl border border-[#d7ae5f]/35 bg-black/30 px-3 py-3"
                   >
-                    <p className="font-sans text-[10px] tracking-[0.22em] text-[#d7ae5f] uppercase">{person.role}</p>
-                    <p className="mt-1 font-display text-xl text-[#f6ecd4]">{person.name}</p>
+                    <p className="font-sans text-[10px] tracking-[0.22em] text-[#d7ae5f] uppercase">{group.role}</p>
+                    {group.members.map((member) => (
+                      <p key={member} className="mt-1 font-display text-xl text-[#f6ecd4]">{member}</p>
+                    ))}
                   </article>
                 ))}
               </div>
@@ -148,10 +150,21 @@ export function Invitation() {
           <div className="mx-auto mt-3 h-px w-24 bg-[#d7ae5f]" />
           <p className="mt-3 font-display text-lg text-[#e7d7a8] italic">With the blessings of Allah</p>
           <div className="mt-6 grid gap-4 text-left">
-            <EventCard title="Reception" date={wedding.receptionDate} />
-            <EventCard title="Wedding" date={wedding.weddingDate} />
+            <EventCard
+              title="Nikkah"
+              date={wedding.weddingDate}
+              time={wedding.nikahTime}
+              hijriDate={wedding.hijriDate}
+              venue={wedding.venue}
+            />
+            <EventCard
+              title="Valima Feast"
+              date={wedding.weddingDate}
+              time="After the Nikkah"
+              hijriDate={wedding.hijriDate}
+              venue={wedding.valimaVenue}
+            />
           </div>
-          <p className="mt-5 text-sm text-[#e7d7a8]">Both at {wedding.venue}</p>
         </Panel>
 
         <Panel>
@@ -169,7 +182,7 @@ export function Invitation() {
 
         <footer className="px-6 pt-2 pb-24 text-center">
           <p className="font-script text-4xl text-[#d7ae5f]">
-            {wedding.groom} & {wedding.bride}
+            {wedding.displayGroom} & {wedding.displayBride}
           </p>
           <p className="mt-6 text-sm text-[#e7d7a8]">
             Made with <span aria-hidden="true">❤️</span>
@@ -191,7 +204,19 @@ function CrescentMark() {
   );
 }
 
-function EventCard({ title, date }: { title: string; date: string }) {
+function EventCard({
+  title,
+  date,
+  time,
+  hijriDate,
+  venue,
+}: {
+  title: string;
+  date: string;
+  time: string;
+  hijriDate: string;
+  venue: string;
+}) {
   return (
     <article className="rounded-[24px] border border-[#d7ae5f]/45 bg-white/4 px-5 py-6 text-center">
       <div className="mx-auto flex size-14 items-center justify-center rounded-full bg-black/30 text-[#d7ae5f]">
@@ -199,7 +224,9 @@ function EventCard({ title, date }: { title: string; date: string }) {
       </div>
       <h3 className="mt-4 font-display text-2xl text-[#f3e2b0]">{title}</h3>
       <p className="mt-2 text-sm text-[#e7d7a8]">{date}</p>
-      <p className="mt-3 text-sm text-[#f6ecd4]">{wedding.venue}</p>
+      <p className="mt-1 text-sm text-[#d7ae5f]">{hijriDate}</p>
+      <p className="mt-3 text-sm text-[#f6ecd4]">{time}</p>
+      <p className="mt-3 text-sm text-[#f6ecd4]">{venue}</p>
     </article>
   );
 }

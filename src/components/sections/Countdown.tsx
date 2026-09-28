@@ -9,9 +9,9 @@ export function Countdown() {
   const values = [time.days, time.hours, time.minutes, time.seconds];
 
   return (
-    <section className="bg-paper px-5 py-20 text-ink sm:py-24" aria-label="Countdown to the Nikah">
+    <section className="bg-paper px-5 py-20 text-ink sm:py-24" aria-label="Countdown to the Nikkah">
       <div className="mx-auto max-w-3xl text-center">
-        <p className="font-ornament text-[10px] tracking-[0.32em] text-gold uppercase">Until the Nikah</p>
+        <p className="font-ornament text-[10px] tracking-[0.32em] text-gold uppercase">Until the Nikkah</p>
         <div className="mt-4 flex justify-center">
           <OrnamentRule />
         </div>
@@ -24,7 +24,7 @@ export function Countdown() {
             className="mt-10 grid grid-cols-4 gap-2 sm:gap-8"
             role="timer"
             aria-live="off"
-            aria-label={`${time.days} days, ${time.hours} hours, ${time.minutes} minutes, and ${time.seconds} seconds until the Nikah`}
+            aria-label={`${time.days} days, ${time.hours} hours, ${time.minutes} minutes, and ${time.seconds} seconds until the Nikkah`}
           >
             {labels.map((label, index) => (
               <div key={label} className="min-w-0 border border-gold/40 bg-ivory px-1 py-5 sm:px-4">
