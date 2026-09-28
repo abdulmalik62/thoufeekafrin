@@ -1,0 +1,367 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Playfair Display", Palatino, serif;
+  --font-ornament: "Playfair Display", Palatino, serif;
+  --font-sans: "Work Sans", "Segoe UI", sans-serif;
+  --font-arabic: "Amiri", "Noto Naskh Arabic", serif;
+  --font-script: "Great Vibes", cursive;
+
+  --color-deep: #3e5640;
+  --color-royal: #5d7a50;
+  --color-forest: #e6eedd;
+  --color-sage: #6f8f5c;
+  --color-mist: #e7f0df;
+  --color-paper: #f6f1e6;
+  --color-gold: #a68456;
+  --color-champagne: #8d7352;
+  --color-ivory: #f7f3ea;
+  --color-cream: #f3ebdd;
+  --color-charcoal: #2f382c;
+  --color-ink: #3a4536;
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: clip;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  overflow-x: clip;
+  background: #2a0815;
+  color: #f6ecd4;
+  font-family: var(--font-sans);
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+body::before {
+  content: "";
+  pointer-events: none;
+  position: fixed;
+  inset: 0;
+  z-index: 45;
+  opacity: 0;
+  mix-blend-mode: soft-light;
+  background-image: radial-gradient(rgba(250, 246, 236, 0.7) 0.45px, transparent 0.45px);
+  background-size: 3px 3px;
+}
+
+::selection {
+  background: #c5d4b4;
+  color: #3e5640;
+}
+
+:focus-visible {
+  outline: 2px solid #6f8f5c;
+  outline-offset: 3px;
+}
+
+[data-tone="light"] :focus-visible {
+  outline-color: #5d7a50;
+}
+
+button,
+a {
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.skip-link {
+  position: absolute;
+  left: max(1rem, env(safe-area-inset-left));
+  top: -4rem;
+  z-index: 90;
+  border-radius: 999px;
+  background: #f6f1e6;
+  color: #3e5640;
+  padding: 0.75rem 1rem;
+  font-family: var(--font-ornament);
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.skip-link:focus {
+  top: max(1rem, env(safe-area-inset-top));
+}
+
+section[id] {
+  scroll-margin-top: max(4.5rem, calc(env(safe-area-inset-top) + 3.25rem));
+}
+
+.door-scene {
+  perspective: 1400px;
+}
+
+.door-panel {
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+}
+
+.section-x {
+  padding-left: max(1.25rem, env(safe-area-inset-left));
+  padding-right: max(1.25rem, env(safe-area-inset-right));
+}
+
+.safe-bottom {
+  padding-bottom: max(1.25rem, env(safe-area-inset-bottom));
+}
+
+.filmstrip {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(198, 161, 91, 0.7) transparent;
+}
+
+.filmstrip::-webkit-scrollbar {
+  height: 8px;
+}
+
+.filmstrip::-webkit-scrollbar-thumb {
+  background: rgba(198, 161, 91, 0.7);
+  border-radius: 999px;
+}
+
+@keyframes float-dust {
+  0% {
+    transform: translate3d(0, 10px, 0);
+    opacity: 0;
+  }
+  18% {
+    opacity: 0.55;
+  }
+  100% {
+    transform: translate3d(8px, -72px, 0);
+    opacity: 0;
+  }
+}
+
+.particle {
+  animation-name: float-dust;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+}
+
+@keyframes twinkle {
+  0%,
+  100% {
+    opacity: 0.28;
+  }
+  50% {
+    opacity: 0.95;
+  }
+}
+
+.star {
+  animation: twinkle 5.2s ease-in-out infinite;
+}
+
+@keyframes bob {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    transform: translate3d(0, 6px, 0);
+  }
+}
+
+.scroll-bob {
+  animation: bob 2.4s ease-in-out infinite;
+}
+
+@keyframes float-y {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    transform: translate3d(0, -5px, 0);
+  }
+}
+
+.character-float {
+  animation: float-y 6.8s ease-in-out infinite;
+  transform-origin: center bottom;
+}
+
+@keyframes swing {
+  0%,
+  100% {
+    transform: rotate(-2.1deg);
+  }
+  50% {
+    transform: rotate(2.1deg);
+  }
+}
+
+.lantern-swing {
+  transform-origin: top center;
+  animation: swing 6s ease-in-out infinite;
+}
+
+.lantern:hover .lantern-glow,
+.lantern:focus-visible .lantern-glow {
+  opacity: 1;
+}
+
+@keyframes moon-drift {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    transform: translate3d(0, -8px, 0);
+  }
+}
+
+.moon-drift {
+  animation: moon-drift 16s ease-in-out infinite;
+  filter: drop-shadow(0 0 12px rgba(228, 208, 163, 0.4));
+}
+
+@keyframes shimmer {
+  from {
+    transform: translateX(-130%);
+  }
+  to {
+    transform: translateX(130%);
+  }
+}
+
+.btn-gold {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-gold::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    115deg,
+    transparent 32%,
+    rgba(255, 255, 255, 0.45) 50%,
+    transparent 68%
+  );
+  transform: translateX(-130%);
+  pointer-events: none;
+}
+
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+  .btn-gold:hover::after {
+    animation: shimmer 0.95s ease;
+  }
+
+  .link-gold {
+    background-image: linear-gradient(currentColor, currentColor);
+    background-position: 0 100%;
+    background-repeat: no-repeat;
+    background-size: 0 1px;
+    transition: background-size 0.45s ease;
+  }
+
+  .link-gold:hover {
+    background-size: 100% 1px;
+  }
+}
+
+@keyframes eq-bounce {
+  0%,
+  100% {
+    transform: scaleY(0.35);
+  }
+  50% {
+    transform: scaleY(1);
+  }
+}
+
+.eq-bar {
+  width: 2px;
+  height: 14px;
+  transform-origin: bottom;
+  background: white;
+  animation: eq-bounce 0.85s ease-in-out infinite;
+}
+
+.eq-bar:nth-child(2) {
+  animation-delay: 0.15s;
+}
+
+.eq-bar:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+.invite-rise {
+  animation: invite-rise 0.8s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.islam-lattice {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='72' height='72' viewBox='0 0 72 72'%3E%3Cpath d='M36 2l8 18 18 4-14 12 4 18-16-10-16 10 4-18L8 24l18-4z' fill='none' stroke='%23d7ae5f' stroke-opacity='0.18' stroke-width='0.8'/%3E%3C/svg%3E");
+  background-size: 92px 92px;
+  animation: islam-pan 36s linear infinite;
+}
+
+.islam-rosette {
+  animation: islam-spin 90s linear infinite;
+  transform-origin: center;
+}
+
+.islam-float {
+  animation: islam-float 7s ease-in-out infinite;
+}
+
+.islam-float-late {
+  animation: islam-float 9s ease-in-out infinite;
+  animation-delay: -3s;
+}
+
+@keyframes islam-pan {
+  to {
+    background-position: 92px 92px;
+  }
+}
+
+@keyframes islam-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes islam-float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-16px);
+  }
+}
+
+@keyframes invite-rise {
+  from {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
