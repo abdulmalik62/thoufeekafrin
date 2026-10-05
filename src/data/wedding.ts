@@ -3,7 +3,7 @@ export const wedding = {
   bride: "Aafrin O.S",
   displayGroom: "Thoufeek",
   displayBride: "Aafrin",
-  groomParents: "S/o Mohideen Pillai & Firthous",
+  groomParents: "S/o Mohideen Pillai & Firthouse",
   brideParents: "D/o Syed Ahmed Sahib & Jahanara",
   date: "2026-10-21",
   displayDate: "21 October 2026",
