@@ -114,7 +114,7 @@ export function Invitation() {
             <PersonCard initial="T" title={wedding.groom} note={wedding.groomParents} />
             <PersonCard initial="A" title={wedding.bride} note={wedding.brideParents} />
           </div>
-          <p className="mt-6 text-sm tracking-wide text-[#d7ae5f]">#{wedding.displayGroom}Weds{wedding.displayBride}</p>
+          <p className="mt-6 text-sm tracking-wide text-[#d7ae5f]">{wedding.displayGroom} Weds {wedding.displayBride}</p>
         </Panel>
 
         <section className="px-4 pb-6">
@@ -124,7 +124,7 @@ export function Invitation() {
               <div className="flex items-center justify-center gap-2">
                 <Flower />
                 <h2 className="font-display text-[1.15rem] tracking-[0.12em] text-[#e7c56a] uppercase">
-                  Eagerly Awaiting Your Presence
+                  With Love, We Invite You
                 </h2>
                 <Flower />
               </div>
