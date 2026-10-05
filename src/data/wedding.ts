@@ -1,5 +1,5 @@
 export const wedding = {
-  groom: "Thoufeek Jailane K",
+  groom: "Thoufeek Jailane M",
   bride: "Aafrin O.S",
   displayGroom: "Thoufeek",
   displayBride: "Aafrin",
